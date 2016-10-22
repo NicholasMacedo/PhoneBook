@@ -1,9 +1,3 @@
-/*
-Student Name: Nicholas Macedo - Van Horne
-Student ID: nmacedov
-Student Number: 0889469
-*/
-
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
