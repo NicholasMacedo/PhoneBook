@@ -1,0 +1,62 @@
+****************************************************
+Nicholas Macedo - Van Horne    0889469
+CIS*2520 (DE)  		           Assignment 2/A2
+Friday June 3rd 2015
+****************************************************
+
+
+****************
+Testing Document
+****************
+
+	This document describes all the tests used thorough the assignment and why they are useful. Each program's testing documentation
+	can be found under the appropriate subheading.  
+
+*****************************
+Hash Table & Linked List ADTs
+*****************************
+
+	The tests on the Hash Table ADT and Linked List ADT functions in functionTesting.c are thorough because it checks each function for three cases. 
+	These cases consist of: small data, big data and a NULL data values. Each function in the ADTs are put through the test with
+	the outcome of the test printed to the screen in an organized and easy to follow manor. The initial values of the hash table and linked list 
+	are printed before the testing begins to insure that the values of the hash table and list can be double checked by
+	human eye, to further the correctness checking of the functions outcomes. In cases where the function requires an int,
+	instead of passing in NULL for testing it was passed in a zero. This is due to the compiler giving a warning about NULL being of type
+	void * and it was expecting an int. Thus, with the testing of all three situations the Hash Table and Linked List ADTs can be considered thoroughly
+	tested and ready for use. Through testing the three cases the functions are tested in all sorts of conditions that it should be ready to handle 
+	thus boosting the robustness of the Hash Table and Linked List ADTs.
+
+******************
+Phone Book Program
+******************
+
+	Through out the development of the program, multiple print statements were placed in loops, at the end of loops and in other
+	strategic locations within the code. Most of these print statements can still be found and are commented out amongst the many
+	lines of the program main file and functions file. The use of print statements for testing and debugging is a very powerful. Print 
+	statements can be used to notify the programmer of the values being passed around to and from functions, number of times a loop has run
+	and the success or failure of implemented logic in the code. Aside from using print statements, another tool used for debugging was gdb. This 
+	program, when run, can notify the user what is going wrong with their problem when a segfault is occurring. Valgrind was also used to make
+	sure mallocs and frees are occurring where they need to. Although this program is a little confusing so outcome of tests are not 100% accurate,
+	the interpretation of it still helped in the checking if frees and mallocs were successful. To test to make sure the program was working correctly,
+	many different contact lists where run through the program to make sure that it responds correctly under these different list/table sizes.
+	Through the use of print statements, gdb,valgrind and different maze sizes, the program is tested and works well when preforming its tasks within the
+	known program limitations.
+
+*******************************
+Hash Table and the way it works
+*******************************
+
+	The hash table is implemented using an AArray. Each node of the Hash Table has a number and a list. This number represents the amount of items in the list.
+	The list is used for collision resolution. The hash table is filled in the following process. A key is created using the createKey and the contact's phone 
+        number. The key tells the hash table at what array index the contact info will go. The key as well as the contact info from the linked list is then passed 
+	into a function thats job is to place the contact info in its correct spot in the hash table. Upon a collision, the contact info is then added to the next 
+	availiable spot in the list of contacts for that node. This resolves the collision and keeps the contact info in the right spot for easy look up in the future.
+
+	The collision resolution stargety of the linked list in the hash table allows the search time to be way more effective. To find a contact all the program has to
+	do it create the key and search through the couple nodes in the one key location. Determining if a contact exists is simple due to the above explanation as well.
+
+
+
+
+
+
